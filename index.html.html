@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YL Handmade | Crochê, Acessórios, Lembrancinhas e Terço</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --pink:#e8789a;
+  --pink-light:#fce8ef;
+  --pink-mid:#f5b8cc;
+  --pink-dark:#b54e6e;
+  --lilac:#f0e6f6;
+  --lilac-mid:#c89fd4;
+  --cream:#fdf8fb;
+  --warm:#f7eef3;
+  --text:#2a1520;
+  --muted:#836070;
+  --white:#ffffff;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;background:rgba(253,248,251,0.96);backdrop-filter:blur(10px);z-index:100;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:62px;border-bottom:1px solid rgba(232,120,154,0.18)}
+.logo{display:flex;align-items:center;gap:0.6rem}
+.logo-circle{width:36px;height:36px;background:var(--pink-light);border:1.5px solid var(--pink-mid);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:600;color:var(--pink-dark);letter-spacing:0.05em}
+.logo-text{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:500;color:var(--pink-dark)}
+.logo-text span{font-style:italic}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{text-decoration:none;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);transition:color 0.2s}
+.nav-links a:hover{color:var(--pink)}
+.nav-wa{background:var(--pink);color:white;border:none;padding:0.45rem 1.1rem;border-radius:2rem;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.75rem;font-weight:500;cursor:pointer;text-decoration:none;transition:background 0.2s}
+.nav-wa:hover{background:var(--pink-dark)}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1.1fr 0.9fr;align-items:center;padding:80px 4rem 4rem;gap:3rem;max-width:1200px;margin:0 auto}
+.hero-eyebrow{display:flex;align-items:center;gap:0.5rem;margin-bottom:1.25rem}
+.eyebrow-dot{width:6px;height:6px;background:var(--pink);border-radius:50%;flex-shrink:0}
+.eyebrow-text{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--pink)}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,5vw,4.2rem);font-weight:400;line-height:1.1;margin-bottom:1.25rem}
+.hero h1 em{font-style:italic;color:var(--pink);display:block}
+.hero-sub{font-size:0.9rem;color:var(--muted);line-height:1.8;max-width:440px;margin-bottom:0.75rem}
+.hero-location{display:inline-flex;align-items:center;gap:0.35rem;font-size:0.78rem;color:var(--muted);margin-bottom:2rem}
+.hero-btns{display:flex;gap:0.75rem;flex-wrap:wrap}
+.btn-p{background:var(--pink);color:white;border:none;padding:0.8rem 1.75rem;border-radius:2rem;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.82rem;font-weight:500;cursor:pointer;transition:all 0.2s;text-decoration:none;display:inline-block}
+.btn-p:hover{background:var(--pink-dark);transform:translateY(-1px)}
+.btn-o{background:transparent;color:var(--pink-dark);border:1.5px solid var(--pink-mid);padding:0.8rem 1.75rem;border-radius:2rem;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.82rem;font-weight:500;cursor:pointer;transition:all 0.2s;text-decoration:none;display:inline-block}
+.btn-o:hover{background:var(--pink-light)}
+
+/* HERO VISUAL */
+.hero-right{position:relative}
+.hero-mosaic{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:0.75rem}
+.mosaic-card{border-radius:1.25rem;overflow:hidden;background:var(--warm);aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:3.5rem;position:relative;transition:transform 0.3s}
+.mosaic-card:hover{transform:scale(1.02)}
+.mosaic-card.tall{grid-row:span 2;aspect-ratio:auto;min-height:300px}
+.mosaic-card.c1{background:linear-gradient(135deg,#fce8ef,#f5b8cc)}
+.mosaic-card.c2{background:linear-gradient(135deg,#f0e6f6,#dcc5e8)}
+.mosaic-card.c3{background:linear-gradient(135deg,#ffedf3,#ffd6e6)}
+.mosaic-label{position:absolute;bottom:0.75rem;left:0.75rem;background:rgba(255,255,255,0.9);border-radius:0.5rem;padding:0.25rem 0.6rem;font-size:0.68rem;font-weight:600;color:var(--pink-dark);letter-spacing:0.06em;text-transform:uppercase}
+.hero-badge{position:absolute;background:white;border-radius:1rem;padding:0.55rem 0.85rem;font-size:0.72rem;font-weight:600;box-shadow:0 8px 24px rgba(181,78,110,0.12);display:flex;align-items:center;gap:0.4rem;color:var(--pink-dark)}
+.hb1{top:-0.5rem;right:-1rem}
+.hb2{bottom:2rem;left:-1.5rem;color:#5a7a5e}
+.badge-dot{width:7px;height:7px;border-radius:50%;background:var(--pink);flex-shrink:0}
+.badge-dot.g{background:#5a7a5e}
+
+/* STRIP */
+.strip{background:var(--pink);padding:0.85rem 0;overflow:hidden}
+.strip-inner{display:flex;gap:3rem;white-space:nowrap;animation:marquee 18s linear infinite}
+.strip-item{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.9);display:flex;align-items:center;gap:0.75rem;flex-shrink:0}
+.strip-sep{opacity:0.5}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* SECTIONS */
+section{padding:5rem 2rem}
+.container{max-width:1200px;margin:0 auto}
+.sec-label{display:block;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--pink);margin-bottom:0.6rem}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:400;line-height:1.2;margin-bottom:2.5rem}
+.sec-title em{font-style:italic;color:var(--pink)}
+.sec-header{text-align:center;margin-bottom:3rem}
+
+/* CATEGORIAS */
+.cats-section{background:white}
+.cats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+.cat-card{border-radius:1.25rem;overflow:hidden;cursor:pointer;position:relative;transition:transform 0.25s}
+.cat-card:hover{transform:translateY(-3px)}
+.cat-visual{aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;font-size:3.5rem;position:relative}
+.cat-visual.cv1{background:linear-gradient(160deg,#fce8ef,#f5b8cc)}
+.cat-visual.cv2{background:linear-gradient(160deg,#f0e6f6,#dcc5e8)}
+.cat-visual.cv3{background:linear-gradient(160deg,#fff0e8,#f5d4b8)}
+.cat-visual.cv4{background:linear-gradient(160deg,#e8f0fc,#b8cef5)}
+.cat-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(43,21,32,0.7));padding:1.25rem 1rem 1rem}
+.cat-name{font-family:'Playfair Display',serif;font-size:1.1rem;color:white;font-weight:500}
+.cat-count{font-size:0.72rem;color:rgba(255,255,255,0.75);margin-top:0.2rem}
+
+/* PRODUTOS */
+.products-section{background:var(--cream)}
+.products-filter{display:flex;gap:0.5rem;justify-content:center;margin-bottom:2.5rem;flex-wrap:wrap}
+.filter-btn{background:white;border:1px solid var(--pink-mid);border-radius:2rem;padding:0.4rem 1rem;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.75rem;color:var(--muted);cursor:pointer;transition:all 0.2s}
+.filter-btn.active,.filter-btn:hover{background:var(--pink);border-color:var(--pink);color:white}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.25rem}
+.product-card{background:white;border-radius:1.25rem;overflow:hidden;transition:transform 0.2s,box-shadow 0.2s;cursor:pointer}
+.product-card:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(181,78,110,0.1)}
+.prod-img{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:3.8rem;position:relative}
+.pi1{background:linear-gradient(135deg,#fce8ef,#f5c0d0)}
+.pi2{background:linear-gradient(135deg,#f5e8fc,#e0c0f0)}
+.pi3{background:linear-gradient(135deg,#fce8ef,#ffc8d8)}
+.pi4{background:linear-gradient(135deg,#fff0e8,#f5d8c0)}
+.pi5{background:linear-gradient(135deg,#fce8f5,#f0b8d8)}
+.pi6{background:linear-gradient(135deg,#e8f5fc,#b8d8f0)}
+.pi7{background:linear-gradient(135deg,#f5fce8,#c8f0b8)}
+.pi8{background:linear-gradient(135deg,#fce8ef,#f0b8c8)}
+.prod-tag{position:absolute;top:0.65rem;left:0.65rem;font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.22rem 0.6rem;border-radius:2rem;font-weight:600}
+.tag-novo{background:#e8f5e8;color:#3a7a3a}
+.tag-dest{background:var(--pink-light);color:var(--pink-dark)}
+.tag-pers{background:var(--lilac);color:#7a4a9a}
+.prod-info{padding:1rem 1.1rem 1.1rem}
+.prod-cat{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--pink);margin-bottom:0.3rem}
+.prod-name{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:500;margin-bottom:0.3rem}
+.prod-desc{font-size:0.75rem;color:var(--muted);margin-bottom:0.85rem;line-height:1.55}
+.prod-footer{display:flex;align-items:center;justify-content:space-between}
+.price{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:600;color:var(--pink-dark)}
+.price-small{font-size:0.7rem;font-weight:400;color:var(--muted);display:block}
+.btn-pedir{background:var(--pink-light);color:var(--pink-dark);border:none;padding:0.4rem 0.85rem;border-radius:2rem;font-size:0.72rem;font-weight:600;cursor:pointer;transition:all 0.2s}
+.btn-pedir:hover{background:var(--pink);color:white}
+
+/* SOBRE */
+.sobre{background:var(--text)}
+.sobre-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;max-width:1100px;margin:0 auto}
+.sobre-left{position:relative}
+.sobre-img-frame{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:2rem;aspect-ratio:3/4;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;overflow:hidden;position:relative}
+.sobre-img-bg{position:absolute;inset:0;opacity:0.08;background:radial-gradient(circle at 50% 50%,var(--pink) 0%,transparent 70%)}
+.sobre-emojis{font-size:4rem;z-index:1}
+.sobre-name-tag{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:0.75rem;padding:0.5rem 1rem;z-index:1}
+.sobre-name-tag p{font-size:0.8rem;color:rgba(255,255,255,0.9);font-weight:500}
+.sobre-name-tag span{font-size:0.65rem;color:rgba(255,255,255,0.5);letter-spacing:0.1em}
+.sobre h2{font-family:'Playfair Display',serif;font-size:2.6rem;font-weight:400;line-height:1.2;color:white;margin-bottom:1.25rem}
+.sobre h2 em{font-style:italic;color:var(--pink)}
+.sobre p{font-size:0.88rem;line-height:1.9;color:rgba(255,255,255,0.65);margin-bottom:1rem}
+.sobre-tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin:1.5rem 0}
+.tag-pill{background:rgba(232,120,154,0.15);border:1px solid rgba(232,120,154,0.3);border-radius:2rem;padding:0.35rem 0.85rem;font-size:0.72rem;color:var(--pink-mid);letter-spacing:0.06em}
+.sobre-stats{display:flex;gap:2rem;padding-top:1.75rem;border-top:1px solid rgba(255,255,255,0.1)}
+.stat-n{font-family:'Playfair Display',serif;font-size:2rem;font-weight:400;color:var(--pink);display:block}
+.stat-l{font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-top:0.2rem}
+
+/* DEPOIMENTOS */
+.depos{background:var(--warm)}
+.depos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.depo-card{background:white;border-radius:1.25rem;padding:1.5rem}
+.stars{color:var(--pink);font-size:0.85rem;letter-spacing:2px;margin-bottom:0.85rem}
+.depo-text{font-family:'Playfair Display',serif;font-size:0.95rem;font-style:italic;line-height:1.75;color:var(--text);margin-bottom:1.1rem}
+.depo-author{display:flex;align-items:center;gap:0.6rem}
+.depo-av{width:34px;height:34px;border-radius:50%;background:var(--pink-light);display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:600;color:var(--pink-dark);flex-shrink:0}
+.depo-name{font-size:0.8rem;font-weight:600}
+.depo-loc{font-size:0.68rem;color:var(--muted)}
+
+/* CTA */
+.cta-section{background:var(--pink-light);padding:4rem 2rem}
+.cta-inner{max-width:600px;margin:0 auto;text-align:center}
+.cta-inner h2{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:400;margin-bottom:1rem;line-height:1.2}
+.cta-inner h2 em{font-style:italic;color:var(--pink-dark)}
+.cta-inner p{font-size:0.88rem;color:var(--muted);line-height:1.8;margin-bottom:2rem}
+.cta-form{background:white;border-radius:1.5rem;padding:1.75rem;text-align:left}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:0.85rem;margin-bottom:0.85rem}
+.fg{display:flex;flex-direction:column;gap:0.3rem;margin-bottom:0.85rem}
+.fg label{font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted)}
+.fg input,.fg textarea,.fg select{background:var(--cream);border:1px solid #f0dce6;border-radius:0.65rem;padding:0.65rem 0.9rem;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.84rem;color:var(--text);outline:none;transition:border 0.2s;width:100%}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--pink)}
+.fg textarea{resize:vertical;min-height:90px}
+.btn-enviar{width:100%;background:var(--pink);color:white;border:none;padding:0.85rem;border-radius:2rem;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.85rem;font-weight:600;cursor:pointer;transition:background 0.2s;letter-spacing:0.04em}
+.btn-enviar:hover{background:var(--pink-dark)}
+.cta-alt{margin-top:1.25rem;font-size:0.8rem;color:var(--muted)}
+.cta-alt a{color:var(--pink-dark);font-weight:600;text-decoration:none}
+
+/* FOOTER */
+footer{background:var(--text);color:rgba(255,255,255,0.55);padding:3rem 2rem 1.5rem}
+.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:2rem}
+.fb-logo{font-family:'Playfair Display',serif;font-size:1.35rem;color:white;margin-bottom:0.6rem}
+.fb-logo em{font-style:italic;color:var(--pink)}
+.fb p{font-size:0.78rem;line-height:1.8;max-width:240px}
+.fb-location{margin-top:0.75rem;font-size:0.72rem;display:flex;align-items:center;gap:0.3rem;color:var(--pink-mid)}
+footer h4{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:white;margin-bottom:0.85rem}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:0.45rem}
+footer ul a{text-decoration:none;font-size:0.78rem;color:rgba(255,255,255,0.45);transition:color 0.2s}
+footer ul a:hover{color:var(--pink)}
+.footer-bottom{max-width:1200px;margin:0 auto;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.07);display:flex;justify-content:space-between;align-items:center;font-size:0.72rem}
+.socials{display:flex;gap:0.6rem}
+.soc-btn{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:0.75rem;color:rgba(255,255,255,0.55);transition:all 0.2s}
+.soc-btn:hover{background:var(--pink);color:white}
+
+/* WA FLOAT */
+.wa-float{position:fixed;bottom:1.75rem;right:1.75rem;z-index:200;width:54px;height:54px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(37,211,102,0.4);text-decoration:none;font-size:1.5rem;transition:transform 0.2s}
+.wa-float:hover{transform:scale(1.08)}
+
+/* FADE */
+.fi{opacity:0;transform:translateY(18px);transition:opacity 0.55s ease,transform 0.55s ease}
+.fi.v{opacity:1;transform:translateY(0)}
+
+@media(max-width:768px){
+  .hero{grid-template-columns:1fr;padding:5.5rem 1.5rem 3rem;gap:2.5rem}
+  .hero-right{order:-1}
+  .hero-mosaic{max-width:320px;margin:0 auto}
+  .cats-grid{grid-template-columns:repeat(2,1fr)}
+  .products-grid{grid-template-columns:repeat(2,1fr);gap:0.85rem}
+  .sobre-inner{grid-template-columns:1fr}
+  .sobre-left{display:none}
+  .depos-grid{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr 1fr}
+  .frow{grid-template-columns:1fr}
+  nav .nav-links{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <div class="logo-circle">YL</div>
+    <div class="logo-text">YL <span>Handmade</span></div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#categorias">Produtos</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#depoimentos">Avaliações</a></li>
+    <li><a href="#pedido">Pedidos</a></li>
+  </ul>
+  <!-- ✏️ SUBSTITUA o número abaixo pelo WhatsApp real da Yasmin (somente números) -->
+  <a href="https://wa.me/55SEUNUMEROAQUI" class="nav-wa">WhatsApp 💬</a>
+</nav>
+
+<!-- HERO -->
+<div style="max-width:1200px;margin:0 auto">
+<section class="hero">
+  <div>
+    <div class="hero-eyebrow">
+      <span class="eyebrow-dot"></span>
+      <span class="eyebrow-text">Artesanato Personalizado · Recife, PE</span>
+    </div>
+    <h1>Crochê, acessórios e <em>lembrancinhas</em> feitos com amor</h1>
+    <p class="hero-sub">Cada peça é criada com dedicação pela Yasmin. Do terço à roupa de crochê, encontre o presente perfeito ou encomende algo totalmente seu.</p>
+    <div class="hero-location">📍 Recife-PE · Envio para todo o Brasil</div>
+    <div class="hero-btns">
+      <a href="#categorias" class="btn-p">Ver Coleção</a>
+      <a href="https://instagram.com/ylhandmade_" target="_blank" class="btn-o">📸 @ylhandmade_</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-mosaic">
+      <div class="mosaic-card tall c1">🧶<span class="mosaic-label">Crochê</span></div>
+      <div class="mosaic-card c2">📿<span class="mosaic-label">Terço</span></div>
+      <div class="mosaic-card c3">🎀<span class="mosaic-label">Acessórios</span></div>
+    </div>
+    <div class="hero-badge hb1"><span class="badge-dot"></span> Feito à mão ✨</div>
+    <div class="hero-badge hb2"><span class="badge-dot g"></span> Envio nacional</div>
+  </div>
+</section>
+</div>
+
+<!-- STRIP animado -->
+<div class="strip">
+  <div class="strip-inner">
+    <span class="strip-item">✦ <span>Crochê artesanal</span></span>
+    <span class="strip-item strip-sep">·</span>
+    <span class="strip-item">✦ <span>Terço personalizado</span></span>
+    <span class="strip-item strip-sep">·</span>
+    <span class="strip-item">✦ <span>Lembrancinhas</span></span>
+    <span class="strip-item strip-sep">·</span>
+    <span class="strip-item">✦ <span>Acessórios únicos</span></span>
+    <span class="strip-item strip-sep">·</span>
+    <span class="strip-item">✦ <span>Encomendas especiais</span></span>
+    <span class="strip-item strip-sep">·</span>
+    <span class="strip-item">✦ <span>Crochê artesanal</span></span>
+    <span class="strip-item strip-sep">·</span>
+    <span class="strip-item">✦ <span>Terço personalizado</span></span>
+    <span class="strip-item strip-sep">·</span>
+    <span class="strip-item">✦ <span>Lembrancinhas</span></span>
+    <span class="strip-item strip-sep">·</span>
+    <span class="strip-item">✦ <span>Acessórios únicos</span></span>
+    <span class="strip-item strip-sep">·</span>
+    <span class="strip-item">✦ <span>Encomendas especiais</span></span>
+    <span class="strip-item strip-sep">·</span>
+  </div>
+</div>
+
+<!-- CATEGORIAS -->
+<section class="cats-section" id="categorias">
+  <div class="container">
+    <div class="sec-header fi">
+      <span class="sec-label">Coleções</span>
+      <h2 class="sec-title">O que a <em>Yasmin</em> cria</h2>
+    </div>
+    <div class="cats-grid fi">
+      <div class="cat-card">
+        <div class="cat-visual cv1">🧶
+          <div class="cat-overlay"><div class="cat-name">Crochê</div><div class="cat-count">Roupas, bolsas e mais</div></div>
+        </div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-visual cv2">📿
+          <div class="cat-overlay"><div class="cat-name">Terço</div><div class="cat-count">Personalizado e especial</div></div>
+        </div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-visual cv3">🎀
+          <div class="cat-overlay"><div class="cat-name">Acessórios</div><div class="cat-count">Tiaras, pulseiras e bijus</div></div>
+        </div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-visual cv4">🎁
+          <div class="cat-overlay"><div class="cat-name">Lembrancinhas</div><div class="cat-count">Batizado, chá e festas</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUTOS -->
+<section class="products-section">
+  <div class="container">
+    <div class="sec-header fi">
+      <span class="sec-label">Produtos</span>
+      <h2 class="sec-title">Peças em <em>destaque</em></h2>
+    </div>
+    <div class="products-filter">
+      <button class="filter-btn active">Todos</button>
+      <button class="filter-btn">Crochê</button>
+      <button class="filter-btn">Terço</button>
+      <button class="filter-btn">Acessórios</button>
+      <button class="filter-btn">Lembrancinhas</button>
+    </div>
+    <div class="products-grid">
+
+      <!-- ✏️ EDITE os produtos abaixo com nome, preço e descrição reais -->
+
+      <div class="product-card fi">
+        <div class="prod-img pi1">👙<span class="prod-tag tag-dest">Destaque</span></div>
+        <div class="prod-info">
+          <div class="prod-cat">Crochê</div>
+          <div class="prod-name">Conjunto Crochê</div>
+          <div class="prod-desc">Top e short em crochê, várias cores sob encomenda</div>
+          <div class="prod-footer">
+            <span class="price">R$ 150<span class="price-small">sob consulta</span></span>
+            <a href="https://wa.me/55SEUNUMEROAQUI?text=Olá! Quero encomendar o Conjunto de Crochê 🧶" target="_blank"><button class="btn-pedir">Pedir</button></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card fi" style="transition-delay:.08s">
+        <div class="prod-img pi2">📿<span class="prod-tag tag-pers">Personalizado</span></div>
+        <div class="prod-info">
+          <div class="prod-cat">Terço</div>
+          <div class="prod-name">Terço Artesanal</div>
+          <div class="prod-desc">Feito à mão, cores personalizadas e embalagem especial</div>
+          <div class="prod-footer">
+            <span class="price">R$ 35<span class="price-small">a partir de</span></span>
+            <a href="https://wa.me/55SEUNUMEROAQUI?text=Olá! Quero encomendar um Terço Artesanal 📿" target="_blank"><button class="btn-pedir">Pedir</button></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card fi" style="transition-delay:.16s">
+        <div class="prod-img pi3">🐰<span class="prod-tag tag-novo">Novo</span></div>
+        <div class="prod-info">
+          <div class="prod-cat">Acessórios</div>
+          <div class="prod-name">Tiara de Crochê</div>
+          <div class="prod-desc">Tiara temática em crochê, perfeita para fotos e festas</div>
+          <div class="prod-footer">
+            <span class="price">R$ 45<span class="price-small">cada</span></span>
+            <a href="https://wa.me/55SEUNUMEROAQUI?text=Olá! Quero encomendar uma Tiara de Crochê 🐰" target="_blank"><button class="btn-pedir">Pedir</button></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card fi" style="transition-delay:.24s">
+        <div class="prod-img pi4">🧸</div>
+        <div class="prod-info">
+          <div class="prod-cat">Lembrancinhas</div>
+          <div class="prod-name">Kit Lembrancinha</div>
+          <div class="prod-desc">Kit para batizado, chá de bebê ou festa com tema</div>
+          <div class="prod-footer">
+            <span class="price">R$ 8<span class="price-small">por unidade</span></span>
+            <a href="https://wa.me/55SEUNUMEROAQUI?text=Olá! Quero encomendar Kit Lembrancinha 🧸" target="_blank"><button class="btn-pedir">Pedir</button></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card fi" style="transition-delay:.32s">
+        <div class="prod-img pi5">👜<span class="prod-tag tag-dest">Destaque</span></div>
+        <div class="prod-info">
+          <div class="prod-cat">Crochê</div>
+          <div class="prod-name">Bolsa de Crochê</div>
+          <div class="prod-desc">Bolsa trabalhada em fio de malha, moderna e resistente</div>
+          <div class="prod-footer">
+            <span class="price">R$ 85<span class="price-small">a partir de</span></span>
+            <a href="https://wa.me/55SEUNUMEROAQUI?text=Olá! Quero encomendar uma Bolsa de Crochê 👜" target="_blank"><button class="btn-pedir">Pedir</button></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card fi" style="transition-delay:.4s">
+        <div class="prod-img pi6">💐<span class="prod-tag tag-novo">Novo</span></div>
+        <div class="prod-info">
+          <div class="prod-cat">Decoração</div>
+          <div class="prod-name">Aplique Bordado</div>
+          <div class="prod-desc">Aplique em crochê para roupas, bolsas e almofadas</div>
+          <div class="prod-footer">
+            <span class="price">R$ 25<span class="price-small">cada</span></span>
+            <a href="https://wa.me/55SEUNUMEROAQUI?text=Olá! Quero encomendar Aplique Bordado 💐" target="_blank"><button class="btn-pedir">Pedir</button></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card fi" style="transition-delay:.48s">
+        <div class="prod-img pi7">📿</div>
+        <div class="prod-info">
+          <div class="prod-cat">Acessórios</div>
+          <div class="prod-name">Pulseira Artesanal</div>
+          <div class="prod-desc">Pulseira colorida feita à mão, pode personalizar as cores</div>
+          <div class="prod-footer">
+            <span class="price">R$ 18<span class="price-small">cada</span></span>
+            <a href="https://wa.me/55SEUNUMEROAQUI?text=Olá! Quero encomendar Pulseira Artesanal 💕" target="_blank"><button class="btn-pedir">Pedir</button></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card fi" style="transition-delay:.56s">
+        <div class="prod-img pi8"><span style="font-size:2rem">✨</span><span class="prod-tag tag-pers">Personalizado</span></div>
+        <div class="prod-info">
+          <div class="prod-cat">Encomenda</div>
+          <div class="prod-name">Peça Exclusiva</div>
+          <div class="prod-desc">Me conta sua ideia e criamos algo totalmente único pra você</div>
+          <div class="prod-footer">
+            <span class="price">Consultar<span class="price-small">personalizado</span></span>
+            <a href="https://wa.me/55SEUNUMEROAQUI?text=Olá! Quero fazer uma encomenda personalizada ✨" target="_blank"><button class="btn-pedir">Pedir</button></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="sobre-inner">
+    <div class="sobre-left fi">
+      <div class="sobre-img-frame">
+        <div class="sobre-img-bg"></div>
+        <div class="sobre-emojis">🧶🎀📿</div>
+        <div class="sobre-name-tag">
+          <p>Yasmin Leal</p>
+          <span>@ylhandmade_</span>
+        </div>
+      </div>
+    </div>
+    <div class="fi" style="transition-delay:.15s">
+      <span class="sec-label" style="color:var(--pink-mid)">Sobre mim</span>
+      <h2 style="color:white;margin-bottom:1.25rem">Oi! Sou a <em>Yasmin</em>, artesã apaixonada</h2>
+      <p>Sou de Recife-PE e criei a YL Handmade com o coração cheio de vontade de fazer cada pessoa se sentir especial com uma peça única feita à mão.</p>
+      <p>Trabalho com crochê, acessórios, terço artesanal e lembrancinhas personalizadas. Cada encomenda recebe atenção e carinho do início ao fim.</p>
+      <p>Me segue no Instagram <strong style="color:var(--pink-mid)">@ylhandmade_</strong> para ver os bastidores, novidades e os envios com muito amor! 🎀</p>
+      <div class="sobre-tags">
+        <span class="tag-pill">Crochê</span>
+        <span class="tag-pill">Terço</span>
+        <span class="tag-pill">Acessórios</span>
+        <span class="tag-pill">Lembrancinhas</span>
+        <span class="tag-pill">Recife, PE</span>
+        <span class="tag-pill">Envio nacional</span>
+      </div>
+      <div class="sobre-stats">
+        <div><span class="stat-n">977</span><span class="stat-l">publicações</span></div>
+        <div><span class="stat-n">1,8K</span><span class="stat-l">seguidores</span></div>
+        <div><span class="stat-n">100%</span><span class="stat-l">artesanal</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="depos" id="depoimentos">
+  <div class="container">
+    <div class="sec-header fi">
+      <span class="sec-label">Avaliações</span>
+      <h2 class="sec-title">Clientes que <em>amaram</em></h2>
+    </div>
+    <!-- ✏️ Substitua pelos depoimentos reais das clientes -->
+    <div class="depos-grid">
+      <div class="depo-card fi">
+        <div class="stars">★★★★★</div>
+        <p class="depo-text">"O conjunto de crochê ficou PERFEITO! A qualidade do acabamento é incrível, parece profissional. Já fiz meu segundo pedido!"</p>
+        <div class="depo-author"><div class="depo-av">CA</div><div><div class="depo-name">Camila A.</div><div class="depo-loc">Recife, PE</div></div></div>
+      </div>
+      <div class="depo-card fi" style="transition-delay:.1s">
+        <div class="stars">★★★★★</div>
+        <p class="depo-text">"Encomendei o terço para o batizado do meu filho e ficou lindo demais. A Yasmin é super atenciosa e entregou antes do prazo!"</p>
+        <div class="depo-author"><div class="depo-av">MF</div><div><div class="depo-name">Marcela F.</div><div class="depo-loc">Fortaleza, CE</div></div></div>
+      </div>
+      <div class="depo-card fi" style="transition-delay:.2s">
+        <div class="stars">★★★★★</div>
+        <p class="depo-text">"As lembrancinhas do chá de bebê ficaram uma graça! Cada uma embaladinha com carinho. Recomendo demais, super profissional!"</p>
+        <div class="depo-author"><div class="depo-av">JS</div><div><div class="depo-name">Juliana S.</div><div class="depo-loc">São Paulo, SP</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PEDIDO -->
+<section class="cta-section" id="pedido">
+  <div class="cta-inner">
+    <div class="fi sec-header">
+      <span class="sec-label">Faça seu pedido</span>
+      <h2>Vamos criar algo <em>especial</em> pra você?</h2>
+      <p>Preencha abaixo ou fala direto comigo no WhatsApp. Respondo rapidinho! 💕</p>
+    </div>
+    <div class="cta-form fi">
+      <div class="frow">
+        <div class="fg"><label>Seu nome</label><input type="text" placeholder="Ex: Ana Clara"></div>
+        <div class="fg"><label>WhatsApp</label><input type="tel" placeholder="(81) 99999-9999"></div>
+      </div>
+      <div class="fg">
+        <label>O que você quer encomendar?</label>
+        <select>
+          <option>Escolha um produto</option>
+          <option>Conjunto de Crochê (roupa)</option>
+          <option>Terço Artesanal</option>
+          <option>Tiara de Crochê</option>
+          <option>Kit Lembrancinha</option>
+          <option>Bolsa de Crochê</option>
+          <option>Aplique Bordado</option>
+          <option>Pulseira Artesanal</option>
+          <option>Peça personalizada (outra ideia)</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label>Detalhes do pedido</label>
+        <textarea placeholder="Cores preferidas, tamanho, ocasião, prazo, quantidade... quanto mais detalhes, melhor! 🎀"></textarea>
+      </div>
+      <!-- ✏️ O botão abaixo pode ser ligado a um formulário real (ex: Formspree, EmailJS) -->
+      <button class="btn-enviar" onclick="alert('Em breve! Por enquanto, entre em contato pelo WhatsApp 💕')">Enviar pedido ✦</button>
+    </div>
+    <!-- ✏️ Substitua SEUNUMEROAQUI pelo número real -->
+    <p class="cta-alt">Prefere falar diretamente? <a href="https://wa.me/55SEUNUMEROAQUI" target="_blank">Clique aqui para o WhatsApp</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="fb">
+      <div class="fb-logo">YL <em>Handmade</em></div>
+      <p>Artesanato personalizado feito com amor em Recife, PE. Crochê, terço, acessórios e lembrancinhas únicos.</p>
+      <div class="fb-location">📍 Recife, Pernambuco · Brasil</div>
+    </div>
+    <div>
+      <h4>Produtos</h4>
+      <ul>
+        <li><a href="#categorias">Crochê</a></li>
+        <li><a href="#categorias">Terço Artesanal</a></li>
+        <li><a href="#categorias">Acessórios</a></li>
+        <li><a href="#categorias">Lembrancinhas</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Informações</h4>
+      <ul>
+        <li><a href="#sobre">Sobre a Yasmin</a></li>
+        <li><a href="#pedido">Como encomendar</a></li>
+        <li><a href="#pedido">Prazo de entrega</a></li>
+        <li><a href="#pedido">Formas de pagamento</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contato</h4>
+      <ul>
+        <li><a href="https://instagram.com/ylhandmade_" target="_blank">Instagram</a></li>
+        <li><a href="https://wa.me/55SEUNUMEROAQUI" target="_blank">WhatsApp</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 YL Handmade by Yasmin Leal · Feito com 🤍 em Recife</span>
+    <div class="socials">
+      <a href="https://instagram.com/ylhandmade_" target="_blank" class="soc-btn">📸</a>
+      <a href="https://wa.me/55SEUNUMEROAQUI" target="_blank" class="soc-btn">💬</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Botão flutuante WhatsApp -->
+<a href="https://wa.me/55SEUNUMEROAQUI" target="_blank" class="wa-float" title="Fale no WhatsApp">💬</a>
+
+<script>
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fi').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
